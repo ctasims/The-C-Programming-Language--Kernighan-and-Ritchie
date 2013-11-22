@@ -1,12 +1,12 @@
 /*
  * =====================================================================================
  *
- *       Filename:  temps.c
+ *       Filename:  ex01-04.c
  *
- *    Description:  print temperatures in C and F
+ *    Description:  Print celcius to F table.
  *
  *        Version:  1.0
- *        Created:  7/26/2013 12:27:21 AM
+ *        Created:  11/21/2013 11:54:34 AM
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -35,4 +35,14 @@ main()
         fahr = fahr + step;
     }
 
+    printf("\n\n");
+    
+    celsius = lower;
+    while (celsius <= upper) {
+        fahr = ((9.0/5.0) * celsius) +32.0;
+        printf("%3.0f\t%6.1f\n", fahr, celsius);
+        celsius = celsius + step;
+    }
+
 }
+

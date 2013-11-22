@@ -1,12 +1,12 @@
 /*
  * =====================================================================================
  *
- *       Filename:  temps.c
+ *       Filename:  ex01-15.c
  *
- *    Description:  print temperatures in C and F
+ *    Description:  Rewrite temp conversion with function.
  *
  *        Version:  1.0
- *        Created:  7/26/2013 12:27:21 AM
+ *        Created:  11/21/2013 12:03:31 PM
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -17,6 +17,8 @@
  */
 
 #include <stdio.h>
+
+float fahr_to_celsius(float fahr);
 
 /* print Fahrenheit-Celsius table for fahr = 0, 20, ... 300 */
 main()
@@ -30,9 +32,14 @@ main()
 
     fahr = lower;
     while (fahr <= upper) {
-        celsius = 5.0 * (fahr-32.0) / 9.0;
+        celsius = fahr_to_celsius(fahr);
         printf("%3.0f\t%6.1f\n", fahr, celsius);
         fahr = fahr + step;
     }
 
+}
+
+float fahr_to_celsius(float fahr)
+{
+    return 5.0 * (fahr-32.0) / 9.0;
 }

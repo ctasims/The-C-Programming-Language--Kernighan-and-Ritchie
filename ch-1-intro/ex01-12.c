@@ -1,12 +1,12 @@
 /*
  * =====================================================================================
  *
- *       Filename:  1-5-4_count_words.c
+ *       Filename:  ex01-12.c
  *
- *    Description:  Count lines, words and characters
+ *    Description:  Print input one word per line.
  *
  *        Version:  1.0
- *        Created:  8/3/2013 11:29:43 PM
+ *        Created:  11/21/2013 12:00:49 PM
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -16,31 +16,25 @@
  * =====================================================================================
  */
 
-#include <stdio.h>
-
-#define IN 1   /*  inside a word */
-#define OUT 0   /*  outside a word */
-
-/*  Count lines, words and characers in input. */
-main1()
+/*
+ * Ex. 1-12: Print input one word per line
+ */
+main()
 {
-    int c, nl, nw, nc, state;
+    int c, state;
 
     state = OUT;
-    nl = nw = nc = 0;
 
     while ((c = getchar()) != EOF) {
-        ++nc;
-        if (c == '\n') {
-            ++nl;
-        }
         if (c == ' ' || c == '\n' || c == '\t') {
             state = OUT;
+            printf("\n");
         } else if (state == OUT) {
             state = IN;
-            ++nw;
+            printf("%c", c);
+        } else {
+            printf("%c", c);
         }
     }
-    printf("%d %d %d\n", nl, nw, nc);
 }
 

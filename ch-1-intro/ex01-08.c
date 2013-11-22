@@ -1,12 +1,12 @@
 /*
  * =====================================================================================
  *
- *       Filename:  count-lines.c
+ *       Filename:  ex01-08.c
  *
- *    Description:  Ch. 1, p. 19 - count lines of input
+ *    Description:  Count blanks, tabs and newlines.
  *
  *        Version:  1.0
- *        Created:  8/3/2013 10:47:10 PM
+ *        Created:  11/21/2013 11:58:36 AM
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -16,20 +16,14 @@
  * =====================================================================================
  */
 
-#include <stdio.h>
-
-main1()
+main()
 {
     int c, nl;
-
-    nl = 0;
-    while ((c = getchar()) != EOF)
-        /*  single-quotes denote a single character (character constant).
-         *  Double-quotes create a string literal. */
-        if (c == '\n') {
+    while ((c = getchar()) != EOF) {
+        if (c == '\n' || c == '\t' || c == ' ') {
             ++nl;
         }
-
+    }
     printf("%d\n", nl);
 }
 

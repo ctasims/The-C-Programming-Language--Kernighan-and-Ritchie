@@ -1,12 +1,12 @@
 /*
  * =====================================================================================
  *
- *       Filename:  temps.c
+ *       Filename:  ex01-03.c
  *
- *    Description:  print temperatures in C and F
+ *    Description:  temps with heading
  *
  *        Version:  1.0
- *        Created:  7/26/2013 12:27:21 AM
+ *        Created:  11/21/2013 11:54:05 AM
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -28,6 +28,9 @@ main()
     upper = 300;
     step = 20;
 
+    printf("Temperatures, in Fahrenheit and Celsius\n\n");
+        
+
     fahr = lower;
     while (fahr <= upper) {
         celsius = 5.0 * (fahr-32.0) / 9.0;
@@ -35,4 +38,14 @@ main()
         fahr = fahr + step;
     }
 
+    printf("\n\n");
+    
+    celsius = lower;
+    while (celsius <= upper) {
+        fahr = ((9.0/5.0) * celsius) +32.0;
+        printf("%3.0f\t%6.1f\n", fahr, celsius);
+        celsius = celsius + step;
+    }
+
 }
+
