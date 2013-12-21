@@ -20,6 +20,8 @@
 
 #define MAXLINE 1000  /*  maximum input line size. */
 
+int getline(char s[], int lim);
+
 
 int main(void)
 {
