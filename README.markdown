@@ -21,10 +21,10 @@ I want to improve my experience and understanding of C so I can better understan
 2. 10 exercises. 10/10. Complete!
 3. 6 exercises. 6/6. Complete!
 4. 14 exercises. 14/14. Complete!
-5. 20 exercises. 0/20.
+5. 20 exercises. 5/20.
 6. 6 exercises. 0/6.
 7. 9 exercises. 0/9.
 8. 8 exercises. 0/8. (optional)
 
-### Total Exercises: 54/89 (60%)
+### Total Exercises: 59/89 (66%)
 
