@@ -52,3 +52,11 @@ Simple example of simple concept.
 
 
 ## 5.9 Pointers vs. Multi-dimensional Arrays
+Arrays of pointers can have rows with different numbers of columns (different lengths of arrays being pointed to).
+Great for storing character strings.
+
+
+## 5.10 Command-line Arguments
+`argc` is the count of passed arguments.
+`argv` is the argument vector - a pointer to an array of character strings which are the arguments passed by the user.
+The first entry is the program name.
