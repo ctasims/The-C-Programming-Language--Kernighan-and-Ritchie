@@ -6,10 +6,49 @@
 3. Array variables and pointers are similar; an array-and-index expression are equivalent to pointer-and-offset expression.
 4. We can add/subtract pointers in same array, or with integers.
 5. Character pointers provide several benefits over arrays when dealing with strings.
-6. 
+6. Match the data structure with the need. Arrays of pointers can solve many
+   problems.
 7. 
 8. 
 9. 
 10. 
 11. 
 12. 
+
+
+## 5.1
+
+
+## 5.2
+
+
+## 5.3
+
+
+## 5.4
+
+
+## 5.5
+
+
+## 5.6
+
+
+## 5.7 Multi-dimensional Arrays
+Often better to use arrays of pointers instead of multi-dimensional arrays.
+We declare md arrays with nested `{}`.
+Note that when referencing an element, use the notation `array[x][y]`, not
+`array[x,y]` because arrays are really arrays of arrays.
+
+When passing md array to a function, we must tell how many columns it has.
+
+    int f(int daytab[][13]...)
+
+    int f (int (*daytab)[13]
+
+
+## 5.8 Initialization of Pointer Arrays
+Simple example of simple concept.
+
+
+## 5.9 Pointers vs. Multi-dimensional Arrays

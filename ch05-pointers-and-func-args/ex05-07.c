@@ -1,20 +1,21 @@
-#include <strdio.h>
+#include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
-#include <time.h>
+/*#include <stdlib.h>*/
+/*#include <time.h>*/
 
-#define MAXCHARS = 100000
+#define MAXCHARS 100000
 #define MAXLINES 5000
+#define MAXLEN 1000
 
+int getline(char *, int);
 char *lineptr[MAXLINES];
-
 int readlines(char *lineptr[], char[], int nlines);
 void writelines(char *lineptr[], int nlines);
-
 void qsort2(char *lineptr[], int left, int right);
 
+
 /* sort input lines */
-main()
+int main(void)
 {
     int nlines;
     char linearray[MAXCHARS];
@@ -29,26 +30,26 @@ main()
     }
 }
 
-#define MAXLEN 1000
-int getline(char *, int);
-char *alloc(int);
-
 /* read input lines */
 int readlines(char *lineptr[], char linearray[], int maxlines)
 {
-    int len, nlines;
+    int len, nlines, len_remaining = MAXCHARS;
+    int i = 0;
     char *p, line[MAXLEN];
 
     nlines = 0;
-    while ((len = getline(line, MAXLEN)) > 0)
-        p = 
-        if (nlines >= maxlines || (p = alloc(len)) == NULL)
+    while ((len = getline(line, MAXLEN)) > 0) {
+        /*if (nlines >= maxlines || (p = alloc(len)) == NULL)*/
+        if (nlines >= maxlines || len_remaining < len)
             return -1;
         else {
             line[len-1] = '\0';  // delete newline
-            strcpy(p, line);
-            lineptr[nlines++] = p;
+            strcpy(linearray[i], line);
+            lineptr[nlines++] = i;
+            i += len;
         }
+        len_remaining -= len;
+    }
     return nlines;
 }
 
@@ -109,3 +110,15 @@ void swap(char *v[], int i, int j)
     v[j] = temp;
 }
 
+int getline(char s[], int lim)
+{
+    int c, i;
+
+    for (i = 0; i < lim - 1 && (c = getchar()) != EOF && c != '\n'; i++)
+        s[i] = c;
+    if (c == '\n') {
+        s[i++] = c;
+    }
+    s[i] = '\0';
+    return i;
+}
