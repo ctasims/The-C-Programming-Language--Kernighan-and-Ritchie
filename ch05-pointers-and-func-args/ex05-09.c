@@ -15,7 +15,7 @@ int day_of_year(int year, int month, int day) {
     int i, leap;
     char *p;
 
-    leap = (year % 4 == 0 && year % 1000 != 0) || year % 400 == 0;
+    leap = (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
 
     // catch inputs outside acceptable range of values
     p = &daytab[leap][0];
