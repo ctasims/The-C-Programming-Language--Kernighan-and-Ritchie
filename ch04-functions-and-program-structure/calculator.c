@@ -51,7 +51,7 @@ main()
             case '\n':
                 printf("\t%.8g\n", pop());
                 break;
-            dfault:
+            default:
                 printf("error: unknown command %s\n", s);
                 break;
         }
